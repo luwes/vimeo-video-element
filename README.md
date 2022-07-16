@@ -6,7 +6,7 @@ The element API matches the HTML5 `<video>` tag, so it can be easily swapped wit
 
 One of the goals was to have `<vimeo-video>` seamlessly integrate with [Media Chrome](https://github.com/muxinc/media-chrome).
 
-## Example ([CodeSandbox](https://codesandbox.io/s/vimeo-video-element-kvu1fv))
+## Example ([CodeSandbox](https://codesandbox.io/s/vimeo-video-element-x5ku6s))
 
 <!-- prettier-ignore -->
 ```html
