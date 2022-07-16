@@ -1,0 +1,63 @@
+{
+  "name": "vimeo-video-element",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Custom element (web component) for Vimeo.",
+  "main": "dist/vimeo-video-element.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": "luwes/vimeo-video-element",
+  "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/luwes/vimeo-video-element#readme",
+  "bugs": {
+    "url": "https://github.com/luwes/vimeo-video-element/issues"
+  },
+  "scripts": {
+    "test": "web-test-runner **/*test.js --node-resolve",
+    "dev": "esbuild src/vimeo-video-element.js --bundle --servedir=. --outdir=dist",
+    "build": "esbuild src/vimeo-video-element.js --bundle --format=esm --sourcemap --minify --outdir=dist",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@vimeo/player": "2.17.1"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^3.0.3",
+    "@web/test-runner": "^0.13.26",
+    "esbuild": "^0.14.25",
+    "eslint": "^8.10.0",
+    "prettier": "^2.5.1"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "singleQuote": true,
+    "semi": true
+  },
+  "eslintConfig": {
+    "globals": {
+      "globalThis": "writable"
+    },
+    "env": {
+      "browser": true,
+      "es6": true,
+      "mocha": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2022,
+      "sourceType": "module"
+    }
+  },
+  "keywords": [
+    "vimeo",
+    "video",
+    "player",
+    "web component",
+    "custom element"
+  ]
+}
