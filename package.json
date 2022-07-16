@@ -25,7 +25,7 @@
     "@vimeo/player": "2.17.1"
   },
   "devDependencies": {
-    "@open-wc/testing": "^3.0.3",
+    "@open-wc/testing": "^3.1.6",
     "@web/test-runner": "^0.13.26",
     "esbuild": "^0.14.25",
     "eslint": "^8.10.0",
