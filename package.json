@@ -1,6 +1,6 @@
 {
   "name": "vimeo-video-element",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "description": "Custom element (web component) for Vimeo.",
   "main": "dist/vimeo-video-element.js",
