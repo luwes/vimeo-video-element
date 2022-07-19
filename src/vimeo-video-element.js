@@ -105,12 +105,30 @@ class VimeoVideoElement extends HTMLElement {
       transparent: false,
     };
 
+    const onLoaded = async () => {
+      this.#readyState = 1; // HTMLMediaElement.HAVE_METADATA
+      this.dispatchEvent(new Event('loadedmetadata'));
+
+      if (this.api) {
+        this.#muted = await this.api.getMuted();
+        this.#volume = await this.api.getVolume();
+        this.dispatchEvent(new Event('volumechange'));
+
+        this.#duration = await this.api.getDuration();
+        this.dispatchEvent(new Event('durationchange'));
+      }
+
+      this.dispatchEvent(new Event('loadcomplete'));
+      this.loadComplete.resolve();
+    };
+
     if (this.noInit) {
       this.api = oldApi;
-      this.api.loadVideo({
+      await this.api.loadVideo({
         ...this.#options,
         url: this.src,
       });
+      await onLoaded();
       await this.loadComplete;
       return;
     }
@@ -127,23 +145,11 @@ class VimeoVideoElement extends HTMLElement {
     }
 
     this.api = new VimeoPlayerAPI(iframe);
-
-    this.api.on('loaded', async () => {
-      this.#readyState = 1; // HTMLMediaElement.HAVE_METADATA
-      this.dispatchEvent(new Event('loadedmetadata'));
-
-      if (this.api) {
-        this.#muted = await this.api.getMuted();
-        this.#volume = await this.api.getVolume();
-        this.dispatchEvent(new Event('volumechange'));
-
-        this.#duration = await this.api.getDuration();
-        this.dispatchEvent(new Event('durationchange'));
-      }
-
-      this.dispatchEvent(new Event('loadcomplete'));
-      this.loadComplete.resolve();
-    });
+    const onceLoaded = () => {
+      this.api.off('loaded', onceLoaded);
+      onLoaded();
+    }
+    this.api.on('loaded', onceLoaded);
 
     // Make sure a `play` event is fired before the bufferstart event.
     // For example Vimeo's `play` event is delayed decreasing video startup time.
