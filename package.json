@@ -27,7 +27,7 @@
   "devDependencies": {
     "@open-wc/testing": "^3.1.6",
     "@web/test-runner": "^0.14.0",
-    "esbuild": "^0.15.5",
+    "esbuild": "^0.16.3",
     "eslint": "^8.19.0",
     "prettier": "^2.5.1"
   },
