@@ -21,7 +21,9 @@ describe('<vimeo-video>', () => {
     // await aTimeout(50); // postMessage is not instant
     assert(player.muted, 'is muted');
 
-    assert.equal(player.volume, 1, 'is all turned up');
+    player.volume = 1;
+    await aTimeout(100); // postMessage is not instant
+    assert.equal(player.volume, 1, 'is all turned up. volume: ' + player.volume);
     player.volume = 0.5;
     await aTimeout(100); // postMessage is not instant
     assert.equal(player.volume, 0.5, 'is half volume');
