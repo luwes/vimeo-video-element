@@ -1,4 +1,4 @@
-# `<vimeo-video>`
+# `<vimeo-video>` [![Version](https://img.shields.io/npm/v/vimeo-video-element)](https://www.npmjs.com/package/vimeo-video-element) [![Badge size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/vimeo-video-element/+esm?compression=gzip&label=gzip)](https://cdn.jsdelivr.net/npm/vimeo-video-element/+esm)
 
 A custom element (web component) for Vimeo.
 
