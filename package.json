@@ -1,7 +1,7 @@
 {
   "name": "vimeo-video-element",
   "version": "0.2.0",
-  "description": "Custom element (web component) for Vimeo.",
+  "description": "A custom element for the Vimeo player with an API that matches the `<video>` API",
   "type": "module",
   "main": "vimeo-video-element.js",
   "repository": "luwes/vimeo-video-element",
