@@ -1,8 +1,6 @@
 # `<vimeo-video>` [![Version](https://img.shields.io/npm/v/vimeo-video-element)](https://www.npmjs.com/package/vimeo-video-element) [![Badge size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/vimeo-video-element/+esm?compression=gzip&label=gzip)](https://cdn.jsdelivr.net/npm/vimeo-video-element/+esm)
 
-A custom element (web component) for Vimeo.
-
-The element API matches the HTML5 `<video>` tag, so it can be easily swapped with other media, and be compatible with other UI components that work with the video tag.
+A custom element for the Vimeo player with an API that matches the `<video>` API, so it can be easily swapped with other media, and be compatible with other UI components that work with the video tag.
 
 One of the goals was to have `<vimeo-video>` seamlessly integrate with [Media Chrome](https://github.com/muxinc/media-chrome).
 
@@ -42,7 +40,6 @@ This will register the custom elements with the browser so they can be used as H
 ## Related
 
 - [Media Chrome](https://github.com/muxinc/media-chrome) Your media player's dancing suit. 🕺
-- [`<mux-video>`](https://github.com/muxinc/elements/tree/main/packages/mux-video) A Mux-flavored HTML5 video element w/ hls.js and Mux data builtin.
 - [`<youtube-video>`](https://github.com/muxinc/youtube-video-element) A web component for the YouTube player.
 - [`<videojs-video>`](https://github.com/luwes/videojs-video-element) A web component for Video.js.
 - [`<wistia-video>`](https://github.com/luwes/wistia-video-element) A web component for the Wistia player.
@@ -50,3 +47,4 @@ This will register the custom elements with the browser so they can be used as H
 - [`<hls-video>`](https://github.com/muxinc/hls-video-element) A web component for playing HTTP Live Streaming (HLS) videos.
 - [`castable-video`](https://github.com/muxinc/castable-video) Cast your video element to the big screen with ease!
 - [`<mux-player>`](https://github.com/muxinc/elements/tree/main/packages/mux-player) The official Mux-flavored video player web component.
+- [`<mux-video>`](https://github.com/muxinc/elements/tree/main/packages/mux-video) A Mux-flavored HTML5 video element w/ hls.js and Mux data builtin.
