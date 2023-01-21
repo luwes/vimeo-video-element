@@ -431,13 +431,7 @@ class VimeoVideoElement extends HTMLElement {
   }
 }
 
-if (
-  globalThis.customElements.get('vimeo-video') ||
-  globalThis.VimeoVideoElement
-) {
-  console.debug('VimeoVideoElement: <vimeo-video> defined more than once.');
-} else {
-  globalThis.VimeoVideoElement = VimeoVideoElement;
+if (!globalThis.customElements.get('vimeo-video')) {
   globalThis.customElements.define('vimeo-video', VimeoVideoElement);
 }
 
