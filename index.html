@@ -28,7 +28,14 @@
       }
     </style>
 
-    <script type="module" src="./dist/vimeo-video-element.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@vimeo/player/": "https://cdn.jsdelivr.net/npm/@vimeo/player/"
+        }
+      }
+    </script>
+    <script type="module" src="./vimeo-video-element.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/media-chrome/+esm"></script>
   </head>
   <body>

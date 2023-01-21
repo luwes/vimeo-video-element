@@ -1,5 +1,4 @@
 import { fixture, assert, aTimeout } from '@open-wc/testing';
-import '../src/vimeo-video-element.js';
 
 describe('<vimeo-video>', () => {
   it('has a video like API', async function () {

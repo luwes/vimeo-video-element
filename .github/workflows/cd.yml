@@ -38,7 +38,6 @@ jobs:
       - uses: fregante/setup-git-user@v1
       - run: npm ci
       - run: npm test
-      - run: npm run build
       - run: . ./.github/scripts/publish.sh; release ${{ inputs.version_type }}
         if: ${{ inputs.version_type != 'conventional' }}
         shell: bash

@@ -1,13 +1,9 @@
 {
   "name": "vimeo-video-element",
   "version": "0.1.2",
-  "type": "module",
   "description": "Custom element (web component) for Vimeo.",
-  "main": "dist/vimeo-video-element.js",
-  "files": [
-    "src",
-    "dist"
-  ],
+  "type": "module",
+  "main": "vimeo-video-element.js",
   "repository": "luwes/vimeo-video-element",
   "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
   "license": "MIT",
@@ -16,10 +12,8 @@
     "url": "https://github.com/luwes/vimeo-video-element/issues"
   },
   "scripts": {
-    "test": "web-test-runner **/*test.js --node-resolve",
-    "dev": "esbuild src/vimeo-video-element.js --bundle --servedir=. --outdir=dist",
-    "build": "esbuild src/vimeo-video-element.js --bundle --format=esm --sourcemap --minify --outdir=dist",
-    "prepublishOnly": "npm run build"
+    "test": "web-test-runner --config test/web-test-runner.config.js",
+    "dev": "npx serve ."
   },
   "dependencies": {
     "@vimeo/player": "2.17.1"

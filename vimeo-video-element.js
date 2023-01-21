@@ -1,5 +1,5 @@
 // https://github.com/vimeo/player.js
-import VimeoPlayerAPI from '@vimeo/player';
+import VimeoPlayerAPI from '@vimeo/player/dist/player.es.js';
 
 const EMBED_BASE = 'https://player.vimeo.com/video';
 const MATCH_SRC = /vimeo\.com\/(?:video\/)?(\d+)/;
