@@ -1,3 +1,13 @@
+# [0.2.0](https://github.com/luwes/vimeo-video-element/compare/v0.1.2...v0.2.0) (2023-01-21)
+
+
+### Bug Fixes
+
+* merge utils.js ([f5e0588](https://github.com/luwes/vimeo-video-element/commit/f5e0588e23b3ce3adc53463227f11d14b9c8b5f8))
+* simple CE definition ([e834e4d](https://github.com/luwes/vimeo-video-element/commit/e834e4d6ed4d23dfc47352fb74ac9fe337ffa1db))
+
+
+
 ## [0.1.2](https://github.com/luwes/vimeo-video-element/compare/v0.1.1...v0.1.2) (2022-07-19)
 
 
