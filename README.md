@@ -10,7 +10,7 @@ One of the goals was to have `<vimeo-video>` seamlessly integrate with [Media Ch
 
 <!-- prettier-ignore -->
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element@0"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element@0.2/+esm"></script>
 <vimeo-video controls src="https://vimeo.com/648359100"></vimeo-video>
 ```
 
@@ -22,7 +22,7 @@ One of the goals was to have `<vimeo-video>` seamlessly integrate with [Media Ch
 
 <!-- prettier-ignore -->
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element@0"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element@0.2/+esm"></script>
 ```
 
 ### Adding to your app via `npm`
