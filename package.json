@@ -12,6 +12,7 @@
     "url": "https://github.com/luwes/vimeo-video-element/issues"
   },
   "scripts": {
+    "lint": "eslint *.js",
     "test": "web-test-runner --config test/web-test-runner.config.js",
     "dev": "npx serve ."
   },
@@ -21,15 +22,10 @@
   "devDependencies": {
     "@open-wc/testing": "^3.1.7",
     "@web/test-runner": "^0.15.0",
-    "eslint": "^8.32.0",
-    "prettier": "^2.8.3"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "singleQuote": true,
-    "semi": true
+    "eslint": "^8.32.0"
   },
   "eslintConfig": {
+    "root": true,
     "globals": {
       "globalThis": "writable"
     },
