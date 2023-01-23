@@ -17,6 +17,9 @@ templateShadowDOM.innerHTML = `
     top: 0;
     left: 0;
   }
+  :host(:not([controls])) {
+    pointer-events: none;
+  }
 </style>
 `;
 
