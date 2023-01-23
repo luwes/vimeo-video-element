@@ -17,7 +17,6 @@
       }
       media-controller:not([audio]) {
         display: block;         /* expands the container if preload=none */
-        max-width: 640px;       /* allows the container to shrink if small */
         aspect-ratio: 16 / 9;   /* set container aspect ratio if preload=none */
         width: 100%;
       }
@@ -40,33 +39,15 @@
   </head>
   <body>
     <h1>&lt;vimeo-video&gt;</h1>
-    <br />
-
-    <media-controller id="controller">
-      <vimeo-video
-        src="https://vimeo.com/648359100"
-        slot="media"
-        loop
-        muted
-        controls
-      ></vimeo-video>
-      <span slot="gestures-chrome"></span>
-      <media-loading-indicator media-loading slot="centered-chrome" no-auto-hide></media-loading-indicator>
-    </media-controller>
-
     <br>
 
-    <media-control-bar media-controller="controller">
-      <media-play-button></media-play-button>
-      <media-mute-button></media-mute-button>
-      <media-volume-range></media-volume-range>
-      <media-seek-backward-button></media-seek-backward-button>
-      <media-seek-forward-button></media-seek-forward-button>
-      <media-time-range></media-time-range>
-      <media-time-display remaining show-duration></media-time-display>
-      <media-playback-rate-button></media-playback-rate-button>
-      <media-fullscreen-button></media-fullscreen-button>
-    </media-control-bar>
+    <vimeo-video
+      src="https://vimeo.com/648359100"
+      slot="media"
+      loop
+      muted
+      controls
+    ></vimeo-video>
 
     <br>
 
@@ -119,5 +100,34 @@
         console.log(e.type, video.videoWidth, video.videoHeight);
       });
     </script>
+
+    <br>
+
+    <h2>With <a href="https://github.com/muxinc/media-chrome" target="_blank">Media Chrome</a></h2>
+
+    <media-controller style="aspect-ratio: 16 / 9;">
+      <vimeo-video
+        src="https://vimeo.com/648359100"
+        slot="media"
+        muted
+      ></vimeo-video>
+      <media-loading-indicator slot="centered-chrome" no-auto-hide></media-loading-indicator>
+      <media-control-bar>
+        <media-play-button></media-play-button>
+        <media-seek-backward-button seek-offset="15"></media-seek-backward-button>
+        <media-seek-forward-button seek-offset="15"></media-seek-forward-button>
+        <media-mute-button></media-mute-button>
+        <media-volume-range></media-volume-range>
+        <media-time-range></media-time-range>
+        <media-time-display show-duration remaining></media-time-display>
+        <media-playback-rate-button></media-playback-rate-button>
+        <media-pip-button></media-pip-button>
+        <media-fullscreen-button></media-fullscreen-button>
+      </media-control-bar>
+    </media-controller>
+
+    <br>
+    <br>
+
   </body>
 </html>
