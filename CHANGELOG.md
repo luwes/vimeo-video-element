@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/luwes/vimeo-video-element/compare/v0.2.0...v0.2.1) (2023-01-23)
+
+
+### Bug Fixes
+
+* pointer hijacked by Vimeo iframe ([2609a16](https://github.com/luwes/vimeo-video-element/commit/2609a16a503d1d0da3356d1617a30dbbce4426f7))
+
+
+
 # [0.2.0](https://github.com/luwes/vimeo-video-element/compare/v0.1.2...v0.2.0) (2023-01-21)
 
 
