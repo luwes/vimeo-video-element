@@ -1,3 +1,12 @@
+## [0.2.3](https://github.com/luwes/vimeo-video-element/compare/v0.2.2...v0.2.3) (2023-01-28)
+
+
+### Bug Fixes
+
+* add autopause disabled by default fix [#43](https://github.com/luwes/vimeo-video-element/issues/43) ([2aefa5a](https://github.com/luwes/vimeo-video-element/commit/2aefa5a24f876c609f956a732b61da5206e7405c))
+
+
+
 ## 0.2.2 (2023-01-28)
 
 
