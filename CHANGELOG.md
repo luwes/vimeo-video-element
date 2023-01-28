@@ -1,3 +1,21 @@
+## 0.2.2 (2023-01-28)
+
+
+### Bug Fixes
+
+* double load w/ same src ([3b7d506](https://github.com/luwes/vimeo-video-element/commit/3b7d506f14409544407fb5eaacbb771c6ca4f1a3))
+* loaded handling ([40a540e](https://github.com/luwes/vimeo-video-element/commit/40a540ebbc954a537e79bd28b89802d478f6293f))
+* merge utils.js ([2b4ce69](https://github.com/luwes/vimeo-video-element/commit/2b4ce69400fe582f25ec0ac1e84932fc1dcc827b))
+* pointer hijacked by Vimeo iframe ([6598fc1](https://github.com/luwes/vimeo-video-element/commit/6598fc10989c0e5a08df0b92910e0092071de8cd))
+* simple CE definition ([7998211](https://github.com/luwes/vimeo-video-element/commit/79982115a411b811aa549539c0862cc79ac08cbd))
+
+
+### Features
+
+* add vimeo-video ([779eae9](https://github.com/luwes/vimeo-video-element/commit/779eae9ce76615979429faa27d43faa9e94624fd))
+
+
+
 ## [0.2.1](https://github.com/luwes/vimeo-video-element/compare/v0.2.0...v0.2.1) (2023-01-23)
 
 
