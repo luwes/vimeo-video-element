@@ -226,11 +226,13 @@ class VimeoVideoElement extends HTMLElement {
     await this.loadComplete;
   }
 
-  async attributeChangedCallback(attrName) {
+  async attributeChangedCallback(attrName, oldValue, newValue) {
     // This is required to come before the await for resolving loadComplete.
     switch (attrName) {
       case 'src': {
-        this.load();
+        if (oldValue !== newValue) {
+          this.load();
+        }
         return;
       }
     }
