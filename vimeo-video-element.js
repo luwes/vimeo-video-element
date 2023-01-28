@@ -99,6 +99,7 @@ class VimeoVideoElement extends HTMLElement {
       playsinline: this.playsInline,
       preload: this.preload ?? 'metadata',
       transparent: false,
+      autopause: this.hasAttribute('autopause'),
     };
 
     const onLoaded = async () => {
