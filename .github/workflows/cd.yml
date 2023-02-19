@@ -30,6 +30,9 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: actions/setup-node@v3
+        with:
+          # this line is required for the setup-node action to be able to run the npm publish below.
+          registry-url: 'https://registry.npmjs.org'
       - uses: fregante/setup-git-user@v1
       - run: npm install
       - run: npm test
