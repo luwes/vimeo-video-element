@@ -1,3 +1,12 @@
+## [0.2.5](https://github.com/luwes/vimeo-video-element/compare/v0.2.4...v0.2.5) (2023-02-19)
+
+
+### Bug Fixes
+
+* only pack required files ([f9099c4](https://github.com/luwes/vimeo-video-element/commit/f9099c4b85e29e17dab5febc3e4870d5923fa00f))
+
+
+
 ## [0.2.4](https://github.com/luwes/vimeo-video-element/compare/v0.2.3...v0.2.4) (2023-02-19)
 
 
