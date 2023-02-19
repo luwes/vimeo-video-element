@@ -145,7 +145,7 @@ class VimeoVideoElement extends HTMLElement {
     const onceLoaded = () => {
       this.api.off('loaded', onceLoaded);
       onLoaded();
-    }
+    };
     this.api.on('loaded', onceLoaded);
 
     // Make sure a `play` event is fired before the bufferstart event.

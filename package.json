@@ -12,35 +12,15 @@
     "url": "https://github.com/luwes/vimeo-video-element/issues"
   },
   "scripts": {
-    "lint": "eslint *.js",
-    "test": "web-test-runner --config test/web-test-runner.config.js",
-    "dev": "npx serve ."
+    "lint": "npx eslint *.js",
+    "test": "node test/runner.js",
+    "dev": "node test/server.js"
   },
   "dependencies": {
     "@vimeo/player": "2.18.0"
   },
   "devDependencies": {
-    "@open-wc/testing": "^3.1.7",
-    "@web/test-runner": "^0.15.0",
-    "eslint": "^8.32.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "globals": {
-      "globalThis": "writable"
-    },
-    "env": {
-      "browser": true,
-      "es6": true,
-      "mocha": true
-    },
-    "extends": [
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2022,
-      "sourceType": "module"
-    }
+    "playwright-core": "^1.30.0"
   },
   "keywords": [
     "vimeo",

@@ -1,88 +1,100 @@
-import { fixture, assert, aTimeout } from '@open-wc/testing';
+import { test } from 'zora';
 
-describe('<vimeo-video>', () => {
-  it('has a video like API', async function () {
-    this.timeout(10000);
+test('has a video like API', async function (t) {
 
-    const player = await fixture(`<vimeo-video
-      src="https://vimeo.com/648359100"
-      muted
-    ></vimeo-video>`);
+  const player = await fixture(`<vimeo-video
+    src="https://vimeo.com/648359100"
+    muted
+  ></vimeo-video>`);
 
-    assert.equal(player.paused, true, 'is paused on initialization');
+  t.equal(player.paused, true, 'is paused on initialization');
 
-    await player.loadComplete;
+  await player.loadComplete;
 
-    assert.equal(player.paused, true, 'is paused on initialization');
-    assert(!player.ended, 'is not ended');
+  t.equal(player.paused, true, 'is paused on initialization');
+  t.ok(!player.ended, 'is not ended');
 
-    // player.muted = true;
-    // await aTimeout(50); // postMessage is not instant
-    assert(player.muted, 'is muted');
+  // player.muted = true;
+  // await delay(50); // postMessage is not instant
+  t.ok(player.muted, 'is muted');
 
-    player.volume = 1;
-    await aTimeout(100); // postMessage is not instant
-    assert.equal(player.volume, 1, 'is all turned up. volume: ' + player.volume);
-    player.volume = 0.5;
-    await aTimeout(100); // postMessage is not instant
-    assert.equal(player.volume, 0.5, 'is half volume');
+  player.volume = 1;
+  await delay(100); // postMessage is not instant
+  t.equal(player.volume, 1, 'is all turned up. volume: ' + player.volume);
+  player.volume = 0.5;
+  await delay(100); // postMessage is not instant
+  t.equal(player.volume, 0.5, 'is half volume');
 
-    assert(!player.loop, 'loop is false by default');
-    player.loop = true;
-    assert(player.loop, 'loop is true');
+  t.ok(!player.loop, 'loop is false by default');
+  player.loop = true;
+  t.ok(player.loop, 'loop is true');
 
-    if (player.duration == null || Number.isNaN(player.duration)) {
-      await promisify(player.addEventListener.bind(player))('durationchange');
-    }
+  if (player.duration == null || Number.isNaN(player.duration)) {
+    await promisify(player.addEventListener.bind(player))('durationchange');
+  }
 
-    assert.equal(Math.round(player.duration), 115, `is 115s long`);
+  t.equal(Math.round(player.duration), 115, `is 115s long`);
 
-    const loadComplete = player.loadComplete;
+  const loadComplete = player.loadComplete;
 
-    player.src = 'https://vimeo.com/638371504';
-    await player.loadComplete;
+  player.src = 'https://vimeo.com/638371504';
+  await player.loadComplete;
 
-    assert(
-      loadComplete != player.loadComplete,
-      'creates a new promise after new src'
-    );
+  t.ok(
+    loadComplete != player.loadComplete,
+    'creates a new promise after new src'
+  );
 
-    if (player.duration == null || Number.isNaN(player.duration)) {
-      await promisify(player.addEventListener.bind(player))('durationchange');
-    }
+  if (player.duration == null || Number.isNaN(player.duration)) {
+    await promisify(player.addEventListener.bind(player))('durationchange');
+  }
 
-    assert.equal(Math.round(player.duration), 90, `is 90s long`);
+  t.equal(Math.round(player.duration), 90, `is 90s long`);
 
-    player.src = 'https://vimeo.com/648359100';
-    await player.loadComplete;
+  player.src = 'https://vimeo.com/648359100';
+  await player.loadComplete;
 
-    if (player.duration == null || Number.isNaN(player.duration)) {
-      await promisify(player.addEventListener.bind(player))('durationchange');
-    }
+  if (player.duration == null || Number.isNaN(player.duration)) {
+    await promisify(player.addEventListener.bind(player))('durationchange');
+  }
 
-    assert.equal(Math.round(player.duration), 115, `is 115s long`);
+  t.equal(Math.round(player.duration), 115, `is 115s long`);
 
-    player.muted = true;
+  player.muted = true;
 
-    try {
-      await player.play();
-    } catch (error) {
-      console.warn(error);
-    }
-    assert(!player.paused, 'is playing after player.play()');
+  try {
+    await player.play();
+  } catch (error) {
+    console.warn(error);
+  }
+  t.ok(!player.paused, 'is playing after player.play()');
 
-    await aTimeout(1000);
+  await delay(1000);
 
-    assert.equal(String(Math.round(player.currentTime)), 1, 'is about 1s in');
+  t.equal(Math.round(player.currentTime), 1, 'is about 1s in');
 
-    player.playbackRate = 2;
-    await aTimeout(1000);
+  player.playbackRate = 2;
+  await delay(1000);
 
-    assert.equal(String(Math.round(player.currentTime)), 3, 'is about 3s in');
-  });
+  t.equal(Math.round(player.currentTime), 3, 'is about 3s in');
 });
 
-export function promisify(fn) {
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fixture(html) {
+  const template = document.createElement('template');
+  template.innerHTML = html;
+  const fragment = template.content.cloneNode(true);
+  const result = fragment.children.length > 1
+    ? [...fragment.children]
+    : fragment.children[0];
+  document.body.append(fragment);
+  return result;
+}
+
+function promisify(fn) {
   return (...args) =>
     new Promise((resolve) => {
       fn(...args, (...res) => {
