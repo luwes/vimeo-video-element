@@ -1,3 +1,7 @@
+## [0.2.6](https://github.com/luwes/vimeo-video-element/compare/v0.2.5...v0.2.6) (2023-02-19)
+
+
+
 ## [0.2.5](https://github.com/luwes/vimeo-video-element/compare/v0.2.4...v0.2.5) (2023-02-19)
 
 
