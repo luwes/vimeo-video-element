@@ -4,6 +4,7 @@
   "description": "A custom element for the Vimeo player with an API that matches the `<video>` API",
   "type": "module",
   "main": "vimeo-video-element.js",
+  "files": [],
   "repository": "luwes/vimeo-video-element",
   "author": "Wesley Luyten <me@wesleyluyten.com> (https://wesleyluyten.com)",
   "license": "MIT",
