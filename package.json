@@ -22,6 +22,24 @@
   "devDependencies": {
     "playwright-core": "^1.30.0"
   },
+  "eslintConfig": {
+    "root": true,
+    "globals": {
+      "globalThis": "writable"
+    },
+    "env": {
+      "browser": true,
+      "es6": true,
+      "mocha": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2022,
+      "sourceType": "module"
+    }
+  },
   "keywords": [
     "vimeo",
     "video",
