@@ -8,82 +8,82 @@ function createVideoElement() {
 }
 
 test('has default video props', async function (t) {
-  const player = await createVideoElement();
+  const video = await createVideoElement();
 
-  t.equal(player.paused, true, 'is paused on initialization');
+  t.equal(video.paused, true, 'is paused on initialization');
 
-  await player.loadComplete;
+  await video.loadComplete;
 
-  t.equal(player.paused, true, 'is paused on initialization');
-  t.ok(!player.ended, 'is not ended');
-  t.ok(player.muted, 'is muted');
+  t.equal(video.paused, true, 'is paused on initialization');
+  t.ok(!video.ended, 'is not ended');
+  t.ok(video.muted, 'is muted');
 });
 
 test('volume', async function (t) {
-  const player = await createVideoElement();
-  await player.loadComplete;
+  const video = await createVideoElement();
+  await video.loadComplete;
 
-  player.volume = 1;
+  video.volume = 1;
   await delay(100); // postMessage is not instant
-  t.equal(player.volume, 1, 'is all turned up. volume: ' + player.volume);
-  player.volume = 0.5;
+  t.equal(video.volume, 1, 'is all turned up. volume: ' + video.volume);
+  video.volume = 0.5;
   await delay(100); // postMessage is not instant
-  t.equal(player.volume, 0.5, 'is half volume');
+  t.equal(video.volume, 0.5, 'is half volume');
 });
 
 test('loop', async function (t) {
-  const player = await createVideoElement();
-  await player.loadComplete;
+  const video = await createVideoElement();
+  await video.loadComplete;
 
-  t.ok(!player.loop, 'loop is false by default');
-  player.loop = true;
-  t.ok(player.loop, 'loop is true');
+  t.ok(!video.loop, 'loop is false by default');
+  video.loop = true;
+  t.ok(video.loop, 'loop is true');
 });
 
 test('duration', async function (t) {
-  const player = await createVideoElement();
-  await player.loadComplete;
+  const video = await createVideoElement();
+  await video.loadComplete;
 
-  if (player.duration == null || Number.isNaN(player.duration)) {
-    await promisify(player.addEventListener.bind(player))('durationchange');
+  if (video.duration == null || Number.isNaN(video.duration)) {
+    await promisify(video.addEventListener.bind(video))('durationchange');
   }
 
-  t.equal(Math.round(player.duration), 115, `is 115s long`);
+  t.equal(Math.round(video.duration), 115, `is 115s long`);
 });
 
 test('load promise', async function (t) {
-  const player = await createVideoElement();
-  await player.loadComplete;
+  const video = await createVideoElement();
+  await video.loadComplete;
 
-  const loadComplete = player.loadComplete;
+  const loadComplete = video.loadComplete;
 
-  player.src = 'https://vimeo.com/638371504';
-  await player.loadComplete;
+  video.src = 'https://vimeo.com/638371504';
+  await video.loadComplete;
 
   t.ok(
-    loadComplete != player.loadComplete,
+    loadComplete != video.loadComplete,
     'creates a new promise after new src'
   );
 
-  if (player.duration == null || Number.isNaN(player.duration)) {
-    await promisify(player.addEventListener.bind(player))('durationchange');
+  if (video.duration == null || Number.isNaN(video.duration)) {
+    await promisify(video.addEventListener.bind(video))('durationchange');
   }
 
-  t.equal(Math.round(player.duration), 90, `is 90s long`);
+  t.equal(Math.round(video.duration), 90, `is 90s long`);
 });
 
 test('play promise', async function (t) {
-  const player = await createVideoElement();
-  await player.loadComplete;
+  const video = await createVideoElement();
+  await video.loadComplete;
 
-  player.muted = true;
+  video.muted = true;
 
   try {
-    await player.play();
+    await video.play();
   } catch (error) {
     console.warn(error);
   }
-  t.ok(!player.paused, 'is playing after player.play()');
+  t.ok(!video.paused, 'is playing after video.play()');
 });
 
 function delay(ms) {
