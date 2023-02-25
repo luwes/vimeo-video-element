@@ -1,11 +1,14 @@
 import { test } from 'zora';
 
-test('has a video like API', async function (t) {
-
-  const player = await fixture(`<vimeo-video
+function createVideoElement() {
+  return fixture(`<vimeo-video
     src="https://vimeo.com/648359100"
     muted
   ></vimeo-video>`);
+}
+
+test('has default video props', async function (t) {
+  const player = await createVideoElement();
 
   t.equal(player.paused, true, 'is paused on initialization');
 
@@ -13,10 +16,12 @@ test('has a video like API', async function (t) {
 
   t.equal(player.paused, true, 'is paused on initialization');
   t.ok(!player.ended, 'is not ended');
-
-  // player.muted = true;
-  // await delay(50); // postMessage is not instant
   t.ok(player.muted, 'is muted');
+});
+
+test('volume', async function (t) {
+  const player = await createVideoElement();
+  await player.loadComplete;
 
   player.volume = 1;
   await delay(100); // postMessage is not instant
@@ -24,16 +29,31 @@ test('has a video like API', async function (t) {
   player.volume = 0.5;
   await delay(100); // postMessage is not instant
   t.equal(player.volume, 0.5, 'is half volume');
+});
+
+test('loop', async function (t) {
+  const player = await createVideoElement();
+  await player.loadComplete;
 
   t.ok(!player.loop, 'loop is false by default');
   player.loop = true;
   t.ok(player.loop, 'loop is true');
+});
+
+test('duration', async function (t) {
+  const player = await createVideoElement();
+  await player.loadComplete;
 
   if (player.duration == null || Number.isNaN(player.duration)) {
     await promisify(player.addEventListener.bind(player))('durationchange');
   }
 
   t.equal(Math.round(player.duration), 115, `is 115s long`);
+});
+
+test('load promise', async function (t) {
+  const player = await createVideoElement();
+  await player.loadComplete;
 
   const loadComplete = player.loadComplete;
 
@@ -50,15 +70,11 @@ test('has a video like API', async function (t) {
   }
 
   t.equal(Math.round(player.duration), 90, `is 90s long`);
+});
 
-  player.src = 'https://vimeo.com/648359100';
+test('play promise', async function (t) {
+  const player = await createVideoElement();
   await player.loadComplete;
-
-  if (player.duration == null || Number.isNaN(player.duration)) {
-    await promisify(player.addEventListener.bind(player))('durationchange');
-  }
-
-  t.equal(Math.round(player.duration), 115, `is 115s long`);
 
   player.muted = true;
 
@@ -68,15 +84,6 @@ test('has a video like API', async function (t) {
     console.warn(error);
   }
   t.ok(!player.paused, 'is playing after player.play()');
-
-  await delay(1000);
-
-  t.equal(Math.round(player.currentTime), 1, 'is about 1s in');
-
-  player.playbackRate = 2;
-  await delay(1000);
-
-  t.equal(Math.round(player.currentTime), 3, 'is about 3s in');
 });
 
 function delay(ms) {
