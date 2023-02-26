@@ -14,14 +14,14 @@
   },
   "scripts": {
     "lint": "npx eslint *.js",
-    "test": "node test/runner.js",
-    "dev": "node test/server.js"
+    "test": "wet run",
+    "dev": "wet serve"
   },
   "dependencies": {
     "@vimeo/player": "2.18.0"
   },
   "devDependencies": {
-    "playwright-core": "^1.30.0"
+    "wet-run": "^0.0.1"
   },
   "eslintConfig": {
     "root": true,
@@ -30,8 +30,7 @@
     },
     "env": {
       "browser": true,
-      "es6": true,
-      "mocha": true
+      "es6": true
     },
     "extends": [
       "eslint:recommended"
