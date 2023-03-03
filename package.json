@@ -21,7 +21,7 @@
     "@vimeo/player": "2.18.0"
   },
   "devDependencies": {
-    "wet-run": "^0.0.1"
+    "wet-run": "^0.0.5"
   },
   "eslintConfig": {
     "root": true,
