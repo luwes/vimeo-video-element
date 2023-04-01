@@ -323,8 +323,7 @@ class VimeoVideoElement extends HTMLElement {
 
   set autoplay(val) {
     if (this.autoplay == val) return;
-    if (val) this.setAttribute('autoplay', '');
-    else this.removeAttribute('autoplay');
+    this.toggleAttribute('autoplay', Boolean(val));
   }
 
   get buffered() {
@@ -340,8 +339,7 @@ class VimeoVideoElement extends HTMLElement {
 
   set controls(val) {
     if (this.controls == val) return;
-    if (val) this.setAttribute('controls', '');
-    else this.removeAttribute('controls');
+    this.toggleAttribute('controls', Boolean(val));
   }
 
   get currentTime() {
@@ -362,8 +360,7 @@ class VimeoVideoElement extends HTMLElement {
 
   set defaultMuted(val) {
     if (this.defaultMuted == val) return;
-    if (val) this.setAttribute('muted', '');
-    else this.removeAttribute('muted');
+    this.toggleAttribute('muted', Boolean(val));
   }
 
   get loop() {
@@ -372,8 +369,7 @@ class VimeoVideoElement extends HTMLElement {
 
   set loop(val) {
     if (this.loop == val) return;
-    if (val) this.setAttribute('loop', '');
-    else this.removeAttribute('loop');
+    this.toggleAttribute('loop', Boolean(val));
   }
 
   get muted() {
@@ -406,8 +402,7 @@ class VimeoVideoElement extends HTMLElement {
 
   set playsInline(val) {
     if (this.playsInline == val) return;
-    if (val) this.setAttribute('playsinline', '');
-    else this.removeAttribute('playsinline');
+    this.toggleAttribute('playsinline', Boolean(val));
   }
 
   get poster() {
