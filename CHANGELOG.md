@@ -1,3 +1,13 @@
+## [0.2.7](https://github.com/luwes/vimeo-video-element/compare/v0.2.6...v0.2.7) (2023-04-01)
+
+
+### Bug Fixes
+
+* add minimum dimensions ([9379526](https://github.com/luwes/vimeo-video-element/commit/937952607621e354514fd698f5ad61db83bdecb1))
+* use toggleAttribute for boolean attributes ([e5b7a04](https://github.com/luwes/vimeo-video-element/commit/e5b7a04050bdcc2196fc8517af8afb682c635ce9))
+
+
+
 ## [0.2.6](https://github.com/luwes/vimeo-video-element/compare/v0.2.5...v0.2.6) (2023-02-19)
 
 
