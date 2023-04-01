@@ -11,6 +11,8 @@ templateShadowDOM.innerHTML = `
     display: inline-block;
     line-height: 0;
     position: relative;
+    min-width: 300px;
+    min-height: 150px;
   }
   iframe {
     position: absolute;
