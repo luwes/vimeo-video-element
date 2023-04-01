@@ -5,7 +5,7 @@ const EMBED_BASE = 'https://player.vimeo.com/video';
 const MATCH_SRC = /vimeo\.com\/(?:video\/)?(\d+)/;
 
 const templateShadowDOM = document.createElement('template');
-templateShadowDOM.innerHTML = `
+templateShadowDOM.innerHTML = /*html*/`
 <style>
   :host {
     display: inline-block;
