@@ -37,6 +37,8 @@ class VimeoVideoElement extends HTMLElement {
     'src',
   ];
 
+  #hasLoaded;
+  #noInit;
   #options;
   #currentTime = 0;
   #duration = NaN;
@@ -60,11 +62,11 @@ class VimeoVideoElement extends HTMLElement {
   }
 
   async load() {
-    if (this.hasLoaded) {
+    if (this.#hasLoaded) {
       this.loadComplete = new PublicPromise();
-      this.noInit = true;
+      this.#noInit = true;
     }
-    this.hasLoaded = true;
+    this.#hasLoaded = true;
 
     this.#currentTime = 0;
     this.#duration = NaN;
@@ -120,7 +122,7 @@ class VimeoVideoElement extends HTMLElement {
       this.loadComplete.resolve();
     };
 
-    if (this.noInit) {
+    if (this.#noInit) {
       this.api = oldApi;
       await this.api.loadVideo({
         ...this.#options,
