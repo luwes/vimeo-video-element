@@ -14,7 +14,7 @@ for the Vimeo player with an API that matches the
 
 <!-- prettier-ignore -->
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element@0.2/+esm"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element@1.0/+esm"></script>
 <vimeo-video controls src="https://vimeo.com/648359100"></vimeo-video>
 ```
 
@@ -36,7 +36,7 @@ Optionally, you can load the script directly from a CDN using [JSDelivr](https:/
 
 <!-- prettier-ignore -->
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element@0.2/+esm"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element@1.0/+esm"></script>
 ```
 
 This will register the custom elements with the browser so they can be used as HTML.
