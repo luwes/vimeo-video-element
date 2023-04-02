@@ -9,9 +9,9 @@ templateShadowDOM.innerHTML = /*html*/`
 <style>
   :host {
     display: inline-block;
-    position: relative;
     min-width: 300px;
     min-height: 150px;
+    position: relative;
   }
   iframe {
     position: absolute;
