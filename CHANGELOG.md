@@ -1,3 +1,12 @@
+## [0.2.8](https://github.com/luwes/vimeo-video-element/compare/v0.2.7...v0.2.8) (2023-04-02)
+
+
+### Bug Fixes
+
+* sizing ([c97cbcb](https://github.com/luwes/vimeo-video-element/commit/c97cbcb42b933818f2301e62ffd082a78416d6a6))
+
+
+
 ## [0.2.7](https://github.com/luwes/vimeo-video-element/compare/v0.2.6...v0.2.7) (2023-04-01)
 
 
