@@ -1,3 +1,12 @@
+# [1.0.0](https://github.com/luwes/vimeo-video-element/compare/v0.2.8...v1.0.0) (2023-04-02)
+
+
+### Bug Fixes
+
+* use private props ([598cdff](https://github.com/luwes/vimeo-video-element/commit/598cdff27ed5e2ca7acde1e1b0c6faeb5d56a75a))
+
+
+
 ## [0.2.8](https://github.com/luwes/vimeo-video-element/compare/v0.2.7...v0.2.8) (2023-04-02)
 
 
