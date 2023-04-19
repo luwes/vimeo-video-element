@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/luwes/vimeo-video-element/compare/v1.0.0...v1.0.1) (2023-04-19)
+
+
+### Bug Fixes
+
+* Next.js SSR document type error ([7a2b43f](https://github.com/luwes/vimeo-video-element/commit/7a2b43f30d6c6e4630f67f9e4ccdd2c19dbedc9c))
+
+
+
 # [1.0.0](https://github.com/luwes/vimeo-video-element/compare/v0.2.8...v1.0.0) (2023-04-02)
 
 
