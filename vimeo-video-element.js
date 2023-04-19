@@ -4,27 +4,29 @@ import VimeoPlayerAPI from '@vimeo/player/dist/player.es.js';
 const EMBED_BASE = 'https://player.vimeo.com/video';
 const MATCH_SRC = /vimeo\.com\/(?:video\/)?(\d+)/;
 
-const templateShadowDOM = document.createElement('template');
-templateShadowDOM.innerHTML = /*html*/`
-<style>
-  :host {
-    display: inline-block;
-    min-width: 300px;
-    min-height: 150px;
-    position: relative;
-  }
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  :host(:not([controls])) {
-    pointer-events: none;
-  }
-</style>
-`;
+const templateShadowDOM = globalThis.document?.createElement('template');
+if (templateShadowDOM) {
+  templateShadowDOM.innerHTML = /*html*/`
+  <style>
+    :host {
+      display: inline-block;
+      min-width: 300px;
+      min-height: 150px;
+      position: relative;
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    :host(:not([controls])) {
+      pointer-events: none;
+    }
+  </style>
+  `;
+}
 
-class VimeoVideoElement extends HTMLElement {
+class VimeoVideoElement extends (globalThis.HTMLElement ?? class {}) {
   static observedAttributes = [
     'autoplay',
     'controls',
@@ -519,7 +521,7 @@ function createTimeRangesObj(ranges) {
   return ranges;
 }
 
-if (!globalThis.customElements.get('vimeo-video')) {
+if (globalThis.customElements && !globalThis.customElements.get('vimeo-video')) {
   globalThis.customElements.define('vimeo-video', VimeoVideoElement);
 }
 
