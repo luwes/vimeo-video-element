@@ -1,6 +1,6 @@
 {
   "name": "vimeo-video-element",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A custom element for the Vimeo player with an API that matches the `<video>` API",
   "type": "module",
   "main": "vimeo-video-element.js",
