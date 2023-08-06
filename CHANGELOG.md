@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/luwes/vimeo-video-element/compare/v1.0.1...v1.0.2) (2023-08-06)
+
+
+### Bug Fixes
+
+* upgrade dependencies ([05abc41](https://github.com/luwes/vimeo-video-element/commit/05abc41a79c92516b85d4eabe651e5bd782609c9))
+
+
+
 ## [1.0.1](https://github.com/luwes/vimeo-video-element/compare/v1.0.0...v1.0.1) (2023-04-19)
 
 
