@@ -1,7 +1,9 @@
 # `<vimeo-video>`
 
-[![Version](https://img.shields.io/npm/v/vimeo-video-element?style=flat-square)](https://www.npmjs.com/package/vimeo-video-element) 
-[![Badge size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/vimeo-video-element/+esm?compression=gzip&label=gzip&style=flat-square)](https://cdn.jsdelivr.net/npm/vimeo-video-element/+esm)
+[![NPM Version](https://img.shields.io/npm/v/vimeo-video-element?style=flat-square&color=informational)](https://www.npmjs.com/package/vimeo-video-element) 
+[![NPM Downloads](https://img.shields.io/npm/dm/vimeo-video-element?style=flat-square&color=informational&label=npm)](https://www.npmjs.com/package/vimeo-video-element) 
+[![jsDelivr hits (npm)](https://img.shields.io/jsdelivr/npm/hm/vimeo-video-element?style=flat-square&color=%23FF5627)](https://www.jsdelivr.com/package/npm/vimeo-video-element)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/vimeo-video-element?style=flat-square&color=success&label=gzip)](https://bundlephobia.com/result?p=vimeo-video-element) 
 
 A [custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) 
 for the Vimeo player with an API that matches the 
